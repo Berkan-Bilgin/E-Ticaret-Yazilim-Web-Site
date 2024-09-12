@@ -2,7 +2,7 @@ import React from "react";
 
 const TwoColumnLayout = ({ leftContent, rightContent }) => {
   return (
-    <div className="container grid grid-cols-12">
+    <div className="container grid grid-cols-12 space-x-4">
       {/* Left Content (e.g., Sidebar) */}
       <div className="col-span-3 ">{leftContent}</div>
 

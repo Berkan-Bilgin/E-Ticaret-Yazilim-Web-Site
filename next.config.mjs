@@ -7,6 +7,7 @@ const nextConfig = {
       "daisyui.com",
       "img.daisyui.com",
       "images.unsplash.com",
+      "fastly.picsum.photos",
     ], // Burada kullanacağınız resmin bulunduğu domain'i ekliyoruz
   },
 };

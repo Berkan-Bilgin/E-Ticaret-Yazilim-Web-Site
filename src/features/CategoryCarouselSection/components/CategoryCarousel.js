@@ -47,8 +47,8 @@ const CategoryCarousel = () => {
         slidesPerView={9} // Aynı anda gösterilecek kategori sayısı
         pagination={{ clickable: true }} // Pagination noktaları aktif
         navigation={{
-          nextEl: ".swiper1-button-next",
-          prevEl: ".swiper1-button-prev",
+          nextEl: ".category-button-next",
+          prevEl: ".category-button-prev",
         }} // Özelleştirilmiş buton sınıfları
         className="mySwiper1"
       >

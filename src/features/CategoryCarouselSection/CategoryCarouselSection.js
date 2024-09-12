@@ -9,7 +9,7 @@ const CategoryCarouselSection = () => {
     <div className="container">
       <div className="flex items-center justify-between">
         <SectionHeader title="Ürün Kategorileri" />
-        <SectionNavigation />
+        <SectionNavigation swiperName={"category-button"} />
       </div>
       <div>
         <CategoryCarousel />
