@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar } from "swiper/modules";
 import "swiper/css";
@@ -7,6 +7,10 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 const BannerSlide = () => {
+  useEffect(() => {
+    console.log("çalışıyor mu lan harbiden?");
+  }, []);
+
   return (
     <div className="w-full h-96 bg-white">
       <Swiper
@@ -36,7 +40,7 @@ const BannerSlide = () => {
           <img
             src="https://via.placeholder.com/800x300?text=Banner+2"
             alt="Banner 2"
-            className="w-full h-64 object-cover"
+            className="w-full h-96 object-cover"
           />
         </SwiperSlide>
 
@@ -45,7 +49,7 @@ const BannerSlide = () => {
           <img
             src="https://via.placeholder.com/800x300?text=Banner+3"
             alt="Banner 3"
-            className="w-full h-64 object-cover"
+            className="w-full h-96 object-cover"
           />
         </SwiperSlide>
       </Swiper>

@@ -1,9 +1,9 @@
 import React from "react";
 import PromoCard from "@/common/components/PromoCard";
 
-const PromoGrid = ({ products }) => {
-  // Ürün sayısına göre grid-cols-N sınıfını dinamik olarak ayarla
-  const gridCols = `grid-cols-${products.length}`;
+const PromoGrid = ({ products, column = 3 }) => {
+  // Telefon ekranında tek kolon, büyük ekranlarda maxColumn kadar kolon
+  const gridCols = `grid-cols-1 md:grid-cols-${column}`;
 
   return (
     <div className={`container grid ${gridCols} gap-4`}>
