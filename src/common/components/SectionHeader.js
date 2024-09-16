@@ -2,9 +2,9 @@ import React from "react";
 
 const SectionHeader = ({ title }) => {
   return (
-    <div className="mb-4">
-      <h2 className="text-2xl font-semibold">{title}</h2>
-    </div>
+    <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold">
+      {title}
+    </h2>
   );
 };
 

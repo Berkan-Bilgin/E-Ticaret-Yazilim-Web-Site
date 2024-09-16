@@ -10,13 +10,15 @@ module.exports = {
     container: {
       center: true,
       screens: {
-        lg: "1200px",
+        lg: "1280px",
       },
     },
     extend: {
       fontSize: {
         xxs: "0.375rem",
         "18px": "1.125rem",
+        md18: "1.125rem",
+        xs12: "0.75rem",
       },
       colors: {
         background: "var(--background)",
@@ -45,6 +47,7 @@ module.exports = {
   },
   plugins: [require("daisyui")],
   daisyui: {
+    base: false,
     themes: [],
   },
 };

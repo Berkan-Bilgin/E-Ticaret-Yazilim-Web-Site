@@ -39,17 +39,39 @@ const categories = [
 
 const CategoryCarousel = () => {
   return (
-    <div className="w-full py-4 bg-purple-400 ">
+    <div className="w-full pt-2 ">
       <Swiper
         autoHeight={true} // Yükseklik dinamik olacak
         modules={[Navigation, Pagination, Scrollbar]}
-        spaceBetween={20} // Aradaki boşluklar
-        slidesPerView={9} // Aynı anda gösterilecek kategori sayısı
-        pagination={{ clickable: true }} // Pagination noktaları aktif
+        spaceBetween={0} // Aradaki boşluklar
+        slidesPerView={6} // Aynı anda gösterilecek kategori sayısı
+        // pagination={{ clickable: true }}
         navigation={{
           nextEl: ".category-button-next",
           prevEl: ".category-button-prev",
         }} // Özelleştirilmiş buton sınıfları
+        breakpoints={{
+          // 640px ve altı ekranlar
+          640: {
+            slidesPerView: 6, // Küçük ekranlarda 2 kategori göster
+            spaceBetween: 10, // Boşlukları daha küçük yap
+          },
+          // 768px ve altı ekranlar
+          768: {
+            slidesPerView: 8, // Orta ekranlarda 4 kategori göster
+            spaceBetween: 15, // Orta boyuttaki ekranlarda boşluk 15px olsun
+          },
+          // 1024px ve üzeri ekranlar
+          1024: {
+            slidesPerView: 9, // Daha büyük ekranlarda 6 kategori göster
+            spaceBetween: 20, // Büyük ekranlarda boşluk 20px olsun
+          },
+          // 1280px ve üzeri ekranlar
+          1280: {
+            slidesPerView: 9, // Daha büyük ekranlarda 9 kategori göster
+            spaceBetween: 20,
+          },
+        }}
         className="mySwiper1"
       >
         {/* Kategori itemlarını döndürme */}

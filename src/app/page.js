@@ -32,6 +32,33 @@ const products = [
   },
 ];
 
+const products3 = [
+  {
+    title: "ÜRÜN ADI",
+    description: "100$'dan başlayan fiyatlarla",
+    buttonText: "Şimdi al",
+    bgColor: "bg-gray-300",
+    height: "h-48",
+    badge: "Özel Teklif",
+  },
+  {
+    title: "ÜRÜN ADI",
+    description: "100$'dan başlayan fiyatlarla",
+    buttonText: "Şimdi al",
+    bgColor: "bg-gray-300",
+    height: "h-48",
+    badge: "Özel Teklif",
+  },
+  {
+    title: "ÜRÜN ADI",
+    description: "100$'dan başlayan fiyatlarla",
+    buttonText: "Şimdi al",
+    bgColor: "bg-gray-300",
+    height: "h-48",
+    badge: "Özel Teklif",
+  },
+];
+
 const productList = [
   {
     isOnSale: true,
@@ -90,7 +117,11 @@ export default function Home() {
     <>
       <Header />
       <HeroSection />
-      <Promo3CardSection />
+      <div className="hidden md:block">
+        <PromoGrid products={products3} column={3} />
+      </div>
+
+      {/* <Promo3CardSection /> */}
       <CategoryCarouselSection />
       <Product4Promo1Section />
       <TwoColumnLayout

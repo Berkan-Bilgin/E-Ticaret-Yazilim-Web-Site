@@ -11,3 +11,22 @@
   align-items: center;
   
 }
+
+
+@layer utilities {
+  .px-btn-padding-x {
+    padding-left: 1rem; /* Örneğin 16px */
+    padding-right: 1rem; /* Örneğin 16px */
+  }
+  .py-btn-padding-y {
+    padding-top: 0.5rem; /* Örneğin 8px */
+    padding-bottom: 0.5rem; /* Örneğin 8px */
+  }
+}
+
+.btn {
+  @apply text-primary-light ;
+}
+.btn:hover {
+  @apply  text-white transition-colors duration-500;
+}

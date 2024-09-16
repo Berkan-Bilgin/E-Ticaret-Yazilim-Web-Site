@@ -2,7 +2,10 @@
 import React from "react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import {
+  faChevronDown,
+  faShoppingCart,
+} from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
 const Topbar = () => {
@@ -12,13 +15,12 @@ const Topbar = () => {
     { name: "EURO", symbol: "€" },
   ]);
   const [selectedCurrency, setSelectedCurrency] = useState(currencies[0]);
-
   const [languages, setLanguages] = useState(["English", "Türkçe", "Español"]);
   const [selectedLanguage, setSelectedLanguage] = useState(languages[0]);
 
   return (
-    <div className="bg-primary border-b border-gray-300 ">
-      <div className="flex justify-between items-center bg-orange-500 py-2   container mx-auto">
+    <div className="bg-primary border-b border-gray-300 text-xs ">
+      <div className="flex justify-between items-center py-2 px-4  container mx-auto">
         <div className="flex space-x-4">
           <button className="text-white">Kayıt Ol / Giriş Yap</button>
           <div className="group relative w-32">
@@ -50,7 +52,7 @@ const Topbar = () => {
             </ul>
           </div>
         </div>
-        <div className="flex items-center space-x-4">
+        <div className="hidden sm:flex  items-center space-x-4">
           {/* Destek Linki */}
           <a href="#" className="text-white mr-8 hover:text-gray-300">
             DESTEK
@@ -87,6 +89,12 @@ const Topbar = () => {
           <button className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded">
             UYGULAMA İNDİR
           </button>
+        </div>
+
+        {/* Küçük ekranlarda görünen bölüm */}
+        <div className="flex items-center ml-4 text-white sm:hidden">
+          <FontAwesomeIcon icon={faShoppingCart} className="text-2xl" />
+          <span className="ml-2">0 ÜRÜN: $0.00</span>
         </div>
       </div>
     </div>

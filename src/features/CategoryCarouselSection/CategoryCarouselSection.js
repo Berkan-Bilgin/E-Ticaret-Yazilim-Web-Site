@@ -6,8 +6,8 @@ import CategoryCarousel from "./components/CategoryCarousel";
 
 const CategoryCarouselSection = () => {
   return (
-    <div className="container">
-      <div className="flex items-center justify-between">
+    <div className="container py-2  ">
+      <div className="flex px-4  items-center justify-between">
         <SectionHeader title="Ürün Kategorileri" />
         <SectionNavigation swiperName={"category-button"} />
       </div>

@@ -9,7 +9,9 @@ const Header = () => {
     <div>
       <Topbar />
       <Searchbar />
-      <Navbar />
+      <div className="hidden sm:block">
+        <Navbar />
+      </div>
     </div>
   );
 };
