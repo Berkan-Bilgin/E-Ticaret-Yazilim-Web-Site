@@ -22,7 +22,9 @@ const Topbar = () => {
     <div className="bg-primary border-b border-gray-300 text-xs ">
       <div className="flex justify-between items-center py-2 px-4  container mx-auto">
         <div className="flex space-x-4">
-          <button className="text-white">Kayıt Ol / Giriş Yap</button>
+          <Link href="/" className="text-white items-center flex">
+            Anasayfa
+          </Link>
           <div className="group relative w-32">
             {/* Sabit genişlik ekledik */}
             {/* Menü Başlığı (Seçili Para Birimi) */}
@@ -92,9 +94,12 @@ const Topbar = () => {
         </div>
 
         {/* Küçük ekranlarda görünen bölüm */}
-        <div className="flex items-center ml-4 text-white sm:hidden">
-          <FontAwesomeIcon icon={faShoppingCart} className="text-2xl" />
-          <span className="ml-2">0 ÜRÜN: $0.00</span>
+
+        <div className="flex items-center ml-4 text-white sm:hidden cursor-pointer">
+          <Link href="/sepetim" passHref>
+            <FontAwesomeIcon icon={faShoppingCart} className="text-2xl" />
+            <span className="ml-2">0 ÜRÜN: $0.00</span>
+          </Link>
         </div>
       </div>
     </div>
