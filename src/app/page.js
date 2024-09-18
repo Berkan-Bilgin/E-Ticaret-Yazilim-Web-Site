@@ -130,7 +130,7 @@ export default function Home() {
   }
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <HeroSection />
 
       {isLargeScreen && <PromoGrid products={products3} column={3} />}
@@ -212,8 +212,8 @@ export default function Home() {
           },
         ]}
       />
-      <FeatureBenefits />
-      <Footer />
+      {/* <FeatureBenefits /> */}
+      {/* <Footer /> */}
     </>
   );
 }
