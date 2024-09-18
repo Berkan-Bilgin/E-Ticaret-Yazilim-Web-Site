@@ -7,14 +7,23 @@ import {
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import Button from "@/common/components/Button";
+import { useEffect } from "react";
 
 const Searchbar = () => {
+  useEffect(() => {
+    console.log("search bar component güncellendi");
+  }, []);
+
   return (
     <div className="bg-white ">
       <div className="flex items-center sm:space-x-4    px-4 py-2 justify-between container bg">
         {/* Logo */}
         <div className="hidden md:flex items-center">
-          <div className="text-primary-light text-2xl font-bold">MEDICAL</div>
+          <Link href="/" passHref>
+            <div className="text-primary-light text-2xl font-bold cursor-pointer">
+              MEDICAL
+            </div>
+          </Link>
         </div>
 
         {/* Search Input */}
@@ -67,10 +76,12 @@ const Searchbar = () => {
           <span className="ml-2">Sepetim</span>
         </div> */}
 
-        <Button variant="primary-outline" className="hidden  sm:flex ">
-          <FontAwesomeIcon icon={faShoppingCart} className="text-2xl" />
-          <span className="ml-2">Sepetim</span>
-        </Button>
+        <Link href="/sepetim" passHref>
+          <Button variant="primary-outline" className="hidden  sm:flex ">
+            <FontAwesomeIcon icon={faShoppingCart} className="text-2xl" />
+            <span className="ml-2">Sepetim</span>
+          </Button>
+        </Link>
       </div>
     </div>
   );
