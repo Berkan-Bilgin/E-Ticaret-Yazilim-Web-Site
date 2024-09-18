@@ -5,9 +5,9 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 const FooterMenu = () => {
   return (
     <div className="bg-gray-100 py-8">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 ">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 px-6 2xl:px-0 lg:grid-cols-4 gap-8 ">
         {/* Sol kısım - Logo ve açıklama */}
-        <div className="mx-6  sm:mx-0">
+        <div className="mx-6   sm:mx-0">
           <div className=" mb-4 flex items-center">
             <FontAwesomeIcon icon={faShoppingCart} size="2x" />
             <h2 className="text-2xl font-bold ml-2">SUPERMART</h2>

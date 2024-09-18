@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Header from "@/features/Header/Header";
 import HeroSection from "@/features/Hero/HeroSection";
@@ -14,6 +15,8 @@ import PromoCard from "@/common/components/PromoCard";
 import FeatureBenefits from "@/features/BenefitsSection/BenefitsSection";
 import NewsletterSection from "@/features/NewsletterSection/NewsletterSection";
 import Footer from "@/features/Footer/Footer";
+import { useMediaQuery } from "react-responsive";
+import { useEffect, useState } from "react";
 
 const products = [
   {
@@ -113,52 +116,94 @@ const productList = [
 ];
 
 export default function Home() {
+  const isLargeScreen = useMediaQuery({ minWidth: 1024 });
+  const isMobileScreen = useMediaQuery({ maxWidth: 1024 });
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    // Server-side rendering sırasında bileşenleri render etme
+    return null;
+  }
   return (
     <>
       <Header />
       <HeroSection />
-      <div className="hidden md:block">
-        <PromoGrid products={products3} column={3} />
-      </div>
+
+      {isLargeScreen && <PromoGrid products={products3} column={3} />}
 
       {/* <Promo3CardSection /> */}
+
       <CategoryCarouselSection />
-      <Product4Promo1Section />
-      <TwoColumnLayout
-        leftContent={<PromoSidebar />}
-        rightContent={
-          <>
-            <TopSellingSection />
-            <PromoGrid products={products} />
-            <ProductList
-              title="Lorem Ipsum"
-              layout="grid"
-              products={productList}
-            />
-            <ProductSwiperSection
-              title="Sizin İçin Önerilenler"
-              productList={productList}
-              swiperName="recommends"
-            />
-            <PromoCard
-              title="Özel Teklif"
-              description="Tüm ürünlerde %50 indirim!"
-              buttonText="Şimdi Satın Al"
-              bgColor="bg-gray-200"
-              height="h-48"
-            />
-            <ProductSwiperSection
-              title="Sizin İçin Önerilenler"
-              productList={productList}
-              swiperName="recommends"
-            />
-          </>
-        }
-      />
+
+      {isMobileScreen && (
+        <ProductSwiperSection
+          title="Sizin İçin Önerilenler"
+          productList={productList}
+          swiperName="recommendsMobile"
+        />
+      )}
+
+      {isMobileScreen && (
+        <ProductSwiperSection
+          title="Çok Satanlar"
+          productList={productList}
+          swiperName="topSellersMobile"
+        />
+      )}
+
+      {isMobileScreen && (
+        <ProductSwiperSection
+          title="Özel Ürünler"
+          productList={productList}
+          swiperName="specialProductsMobile"
+        />
+      )}
+
+      {isLargeScreen && <Product4Promo1Section />}
+
+      {isLargeScreen && (
+        <TwoColumnLayout
+          leftContent={<PromoSidebar />}
+          rightContent={
+            <>
+              <TopSellingSection />
+              <PromoGrid column={2} products={products} />
+              <ProductList
+                title="Lorem Ipsum"
+                layout="grid"
+                products={productList}
+              />
+              <ProductSwiperSection
+                title="Sizin İçin Önerilenler"
+                productList={productList}
+                swiperName="recommends"
+              />
+              <PromoCard
+                title="Özel Teklif"
+                description="Tüm ürünlerde %50 indirim!"
+                buttonText="Şimdi Satın Al"
+                bgColor="bg-gray-200"
+                height="h-48"
+              />
+              <ProductSwiperSection
+                title="Sizin İçin Önerilenler"
+                productList={productList}
+                swiperName="recommends2"
+              />
+            </>
+          }
+        />
+      )}
+
       <PromoGrid
+        column={1}
         products={[
           {
-            title: "ÜRÜN ADI",
+            title: "ÜRÜN ADI12",
             description: "100$'dan başlayan fiyatlarla",
             buttonText: "Şimdi al",
             bgColor: "bg-gray-300",

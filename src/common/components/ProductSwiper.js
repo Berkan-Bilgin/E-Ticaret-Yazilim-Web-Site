@@ -92,7 +92,7 @@ const ProductSwiper = () => {
   }
 
   return (
-    <div className="p-4 bg-red-500  rounded-lg shadow-lg relative ">
+    <div className="p-4 rounded-lg border-4 shadow-lg relative ">
       {/* Üst Başlık ve Yön Okları */}
       <div className="flex justify-between items-center mb-4">
         <h3 className="text-lg font-bold">Yeni Fırsatlar</h3>
