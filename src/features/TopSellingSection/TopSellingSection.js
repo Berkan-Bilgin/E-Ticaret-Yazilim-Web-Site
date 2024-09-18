@@ -64,8 +64,8 @@ const productList = [
 
 const TopSellingSection = () => {
   return (
-    <div className="bg-lime-400">
-      <div className="flex  items-center  justify-between">
+    <div className="">
+      <div className="flex  items-center  justify-between mb-2">
         <SectionHeader title="Çok Satanlar" />
         <SectionNavigation swiperName={"top-selling"} />
       </div>

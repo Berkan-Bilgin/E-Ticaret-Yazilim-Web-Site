@@ -10,6 +10,7 @@ const nextConfig = {
       "fastly.picsum.photos",
     ], // Burada kullanacağınız resmin bulunduğu domain'i ekliyoruz
   },
+  reactStrictMode: false,
 };
 
 export default nextConfig;
