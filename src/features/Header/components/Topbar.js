@@ -7,6 +7,7 @@ import {
   faShoppingCart,
 } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
+import LanguageDropdown from "./LanguageDropdown";
 
 const Topbar = () => {
   const [currencies, setCurrencies] = useState([
@@ -19,12 +20,27 @@ const Topbar = () => {
   const [selectedLanguage, setSelectedLanguage] = useState(languages[0]);
 
   return (
-    <div className="bg-primary border-b border-gray-300 text-xs ">
+    <div className="text-primary-light border-b border-gray-300 text-xs ">
       <div className="flex justify-between items-center py-2 px-4  container mx-auto">
-        <div className="flex space-x-4">
-          <Link href="/" className="text-white items-center flex">
-            Anasayfa
-          </Link>
+        <div className="flex space-x-4"></div>
+        <div className="hidden sm:flex  items-center space-x-4">
+          {/* Destek Linki */}
+          <a href="#" className="hover:text-gray-300">
+            Siparişlerim
+          </a>
+          <a href="#" className="hover:text-gray-300">
+            Kampanyalar
+          </a>
+          <a href="#" className="hover:text-gray-300">
+            Hakkımızda
+          </a>
+
+          <a href="#" className="hover:text-gray-300">
+            Çözüm Merkezi
+          </a>
+
+          <LanguageDropdown />
+
           <div className="group relative w-32">
             {/* Sabit genişlik ekledik */}
             {/* Menü Başlığı (Seçili Para Birimi) */}
@@ -53,12 +69,6 @@ const Topbar = () => {
                 ))}
             </ul>
           </div>
-        </div>
-        <div className="hidden sm:flex  items-center space-x-4">
-          {/* Destek Linki */}
-          <a href="#" className="text-white mr-8 hover:text-gray-300">
-            DESTEK
-          </a>
 
           {/* Dil Seçimi Dropdown */}
           <div className="group relative w-32">
@@ -86,16 +96,11 @@ const Topbar = () => {
                 ))}
             </ul>
           </div>
-
-          {/* Uygulama İndir Butonu */}
-          <button className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded">
-            UYGULAMA İNDİR
-          </button>
         </div>
 
         {/* Küçük ekranlarda görünen bölüm */}
 
-        <div className="flex items-center ml-4 text-white sm:hidden cursor-pointer">
+        <div className="flex items-center ml-4  sm:hidden cursor-pointer">
           <Link href="/sepetim" passHref>
             <FontAwesomeIcon icon={faShoppingCart} className="text-2xl" />
             <span className="ml-2">0 ÜRÜN: $0.00</span>
