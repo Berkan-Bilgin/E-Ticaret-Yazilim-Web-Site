@@ -40,14 +40,6 @@ const Searchbar = () => {
 
         {/* Giriş Yap Dropdown */}
         <div className="dropdown dropdown-hover">
-          {/* <div
-            tabIndex={0}
-            className="border-2 text-primary-light border-primary-light flex items-center px-4 py-2 rounded-lg space-x-2   "
-          >
-            <FontAwesomeIcon icon={faUser} className="text-md" />
-            <span className=" whitespace-nowrap">Giriş Yap</span>
-          </div> */}
-
           <Button variant="primary-outline" tabIndex={0} className="  ">
             <FontAwesomeIcon icon={faUser} className="text-md" />
             <span className=" whitespace-nowrap">Giriş Yap</span>
@@ -69,12 +61,6 @@ const Searchbar = () => {
             </li>
           </ul>
         </div>
-
-        {/* Cart */}
-        {/* <div className="hidden  sm:flex border-primary-light border-2 text-primary-light  items-center px-4 py-2 rounded-lg space-x-2">
-          <FontAwesomeIcon icon={faShoppingCart} className="text-2xl" />
-          <span className="ml-2">Sepetim</span>
-        </div> */}
 
         <Link href="/sepetim" passHref>
           <Button variant="primary-outline" className="hidden  sm:flex ">

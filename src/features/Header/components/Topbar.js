@@ -1,111 +1,22 @@
 "use client";
 import React from "react";
-import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faChevronDown,
-  faShoppingCart,
-} from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import MenuLinks from "./MenuLinks";
 import LanguageDropdown from "./LanguageDropdown";
+import MobileCart from "./MobileCart";
 
 const Topbar = () => {
-  const [currencies, setCurrencies] = useState([
-    { name: "USD", symbol: "$" },
-    { name: "TL", symbol: "₺" },
-    { name: "EURO", symbol: "€" },
-  ]);
-  const [selectedCurrency, setSelectedCurrency] = useState(currencies[0]);
-  const [languages, setLanguages] = useState(["English", "Türkçe", "Español"]);
-  const [selectedLanguage, setSelectedLanguage] = useState(languages[0]);
-
   return (
-    <div className="text-primary-light border-b border-gray-300 text-xs ">
-      <div className="flex justify-between items-center py-2 px-4  container mx-auto">
-        <div className="flex space-x-4"></div>
-        <div className="hidden sm:flex  items-center space-x-4">
-          {/* Destek Linki */}
-          <a href="#" className="hover:text-gray-300">
-            Siparişlerim
-          </a>
-          <a href="#" className="hover:text-gray-300">
-            Kampanyalar
-          </a>
-          <a href="#" className="hover:text-gray-300">
-            Hakkımızda
-          </a>
-
-          <a href="#" className="hover:text-gray-300">
-            Çözüm Merkezi
-          </a>
-
+    <div className="text-text-primary text-xs">
+      <div className="flex justify-between items-center mt-2 px-4 container mx-auto">
+        <div></div>
+        {/* Desktop & Tablet */}
+        <div className="hidden sm:flex items-center space-x-4">
+          <MenuLinks />
           <LanguageDropdown />
-
-          <div className="group relative w-32">
-            {/* Sabit genişlik ekledik */}
-            {/* Menü Başlığı (Seçili Para Birimi) */}
-            <span className="flex items-center justify-between cursor-pointer border bg-primary-light text-white border-gray-300 p-2">
-              {selectedCurrency.symbol} {selectedCurrency.name}
-              {/* Seçilen para biriminin sembolü */}
-              <FontAwesomeIcon
-                icon={faChevronDown}
-                className="w-4 transition-transform duration-500 transform group-hover:rotate-180"
-              />
-            </span>
-
-            {/* Hover olduğunda açılan liste */}
-            <ul className="absolute hidden group-hover:flex flex-col w-full border border-gray-300 z-[1000] top-full left-0 shadow-lg text-white bg-primary">
-              {currencies
-                .filter((currency) => currency !== selectedCurrency) // Seçilen para birimi dışındakileri göster
-                .map((currency, index) => (
-                  <li
-                    key={index}
-                    className="p-2 hover:bg-green-800 cursor-pointer"
-                    onClick={() => setSelectedCurrency(currency)} // Seçilen para birimini güncelle
-                  >
-                    {currency.symbol} {currency.name}{" "}
-                    {/* Para biriminin sembolünü göster */}
-                  </li>
-                ))}
-            </ul>
-          </div>
-
-          {/* Dil Seçimi Dropdown */}
-          <div className="group relative w-32">
-            {/* Dil seçimi başlığı */}
-            <span className="flex items-center justify-between cursor-pointer border bg-primary-light text-white border-gray-300 p-2">
-              {selectedLanguage}
-              <FontAwesomeIcon
-                icon={faChevronDown}
-                className="ml-1 w-4 transition-transform duration-500 transform group-hover:rotate-180"
-              />
-            </span>
-
-            {/* Hover olduğunda açılan liste */}
-            <ul className="absolute hidden group-hover:flex flex-col w-full border border-gray-300 z-[1000] top-full left-0 shadow-lg text-white bg-primary">
-              {languages
-                .filter((lang) => lang !== selectedLanguage) // Seçilen dili hariç tut
-                .map((lang, index) => (
-                  <li
-                    key={index}
-                    className="p-2 hover:bg-green-800 cursor-pointer"
-                    onClick={() => setSelectedLanguage(lang)} // Seçilen dili güncelle
-                  >
-                    {lang}
-                  </li>
-                ))}
-            </ul>
-          </div>
         </div>
 
-        {/* Küçük ekranlarda görünen bölüm */}
-
-        <div className="flex items-center ml-4  sm:hidden cursor-pointer">
-          <Link href="/sepetim" passHref>
-            <FontAwesomeIcon icon={faShoppingCart} className="text-2xl" />
-            <span className="ml-2">0 ÜRÜN: $0.00</span>
-          </Link>
-        </div>
+        {/* Mobile */}
+        <MobileCart />
       </div>
     </div>
   );

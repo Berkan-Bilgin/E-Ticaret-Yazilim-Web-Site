@@ -10,12 +10,10 @@ const languages = [
 ];
 
 const LanguageDropdown = () => {
-  const [selectedLanguage, setSelectedLanguage] = useState(() => {
-    return localStorage.getItem("selectedLanguage") || "EN";
-  });
+  const [isOpen, setIsOpen] = useState(false);
+  const selectedLanguage = localStorage.getItem("selectedLanguage") || "EN";
 
   const handleLanguageChange = (languageCode) => {
-    setSelectedLanguage(languageCode);
     localStorage.setItem("selectedLanguage", languageCode);
     window.location.reload();
   };
@@ -24,22 +22,54 @@ const LanguageDropdown = () => {
     a.code === selectedLanguage ? -1 : b.code === selectedLanguage ? 1 : 0
   );
 
+  const handleMouseEnter = () => {
+    setIsOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsOpen(false);
+    console.log("Dropdown menu closed."); // Konsol mesajı
+  };
+
   return (
-    <div className="relative inline-block text-left group">
-      <div className="flex items-center">
+    <div className="relative inline-block text-left">
+      <div
+        className="relative z-[21] flex items-center"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
         <button
           type="button"
-          className="inline-flex items-center justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none"
+          className="inline-flex items-center justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 focus:outline-none"
         >
           <span
-            className={`fi ${languages.find((lang) => lang.code === selectedLanguage)?.flag} mr-2`}
+            className={`fi ${
+              languages.find((lang) => lang.code === selectedLanguage)?.flag
+            } mr-2`}
           ></span>
           {selectedLanguage}
           <FontAwesomeIcon icon={faChevronDown} className="ml-2" />
         </button>
       </div>
 
-      <div className="absolute right-0 z-[100] mt-2 w-52 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none opacity-0 group-hover:opacity-100 group-hover:block transition-all duration-300">
+      {/* Background Overlay her zaman DOM'da, sadece görünürlüğü kontrol ediyoruz */}
+      <div
+        className={`fixed inset-0 z-[20] bg-black transition-opacity duration-500 ${
+          isOpen
+            ? "opacity-60 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
+        } `}
+        onClick={handleMouseLeave}
+      ></div>
+
+      {/* Dropdown Menu */}
+      <div
+        className={`absolute right-0 z-[21]  w-52 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 ${
+          isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
         <div className="py-1" role="menu" aria-orientation="vertical">
           <div className="px-4 py-2 text-sm font-bold text-gray-900">
             Change Language
