@@ -13,14 +13,24 @@ const Button = ({
 
   const variantClasses = {
     primary: "bg-primary text-white hover:bg-green-800",
-    "primary-outline":
-      "border-2 border-primary text-primary bg-transparent  hover:bg-white",
-    secondary: "bg-gray-500 text-white hover:bg-gray-600",
-    "secondary-outline":
-      "border border-gray-500 text-gray-500 bg-transparent hover:bg-gray-100",
+    "primary-outline": "bg-white text-primary hover:bg-gray-100",
+    "primary-bordered":
+      "border-2 border-primary text-primary bg-white hover:bg-gray-100",
+
+    secondary: "bg-secondary text-white hover:bg-gray-600",
+    "secondary-outline": "bg-white text-secondary hover:bg-gray-100",
+    "secondary-bordered":
+      "border-2 border-secondary text-secondary bg-white hover:bg-gray-100",
+
     danger: "bg-red-500 text-white hover:bg-red-600",
-    "danger-outline":
-      "border border-red-500 text-red-500 bg-transparent hover:bg-red-100",
+    "danger-outline": "bg-white text-red-500 hover:bg-gray-100",
+    "danger-bordered":
+      "border-2 border-red-500 text-red-500 bg-white hover:bg-gray-100",
+
+    neutral: "bg-neutral text-white hover:neutralHover",
+    "neutral-outline": "bg-white text-neutral hover:text-primary",
+    "neutral-bordered":
+      "border-2 border-black text-text-primary bg-white hover:text-text-primary",
   }[variant];
 
   const sizeClasses = {

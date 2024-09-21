@@ -48,11 +48,14 @@ module.exports = {
           dark: "#616161",
         },
         success: "#4caf50",
+
         danger: "#f44336",
         warning: "#ff9800",
         info: "#2196f3",
         highlight: "#ffeb3b",
         accent: "#ff5722",
+        neutral: "#333333",
+        neutralHover: "#555555",
         border: {
           primary: "#0A9B74",
           secondary: "#FFD202",
