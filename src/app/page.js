@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "@/features/Header/Header";
 import HeroSection from "@/features/Hero/HeroSection";
 import Promo3CardSection from "@/features/Promo3CardSection/Promo3CardSection";
@@ -15,8 +15,10 @@ import PromoCard from "@/common/components/PromoCard";
 import FeatureBenefits from "@/features/BenefitsSection/BenefitsSection";
 import NewsletterSection from "@/features/NewsletterSection/NewsletterSection";
 import Footer from "@/features/Footer/Footer";
+import ScrollToTopButton from "@/common/components/ScrollToTopButton";
 import { useMediaQuery } from "react-responsive";
-import { useEffect, useState } from "react";
+
+import Searchbar from "@/features/Header/components/Searchbar";
 
 const products = [
   {
@@ -128,75 +130,75 @@ export default function Home() {
     // Server-side rendering sırasında bileşenleri render etme
     return null;
   }
+
   return (
     <>
-      {/* <Header /> */}
       <HeroSection />
 
-      {isLargeScreen && <PromoGrid products={products3} column={3} />}
-
-      {/* <Promo3CardSection /> */}
-
-      <CategoryCarouselSection />
-
-      {isMobileScreen && (
-        <ProductSwiperSection
-          title="Sizin İçin Önerilenler"
-          productList={productList}
-          swiperName="recommendsMobile"
-        />
-      )}
-
-      {isMobileScreen && (
-        <ProductSwiperSection
-          title="Çok Satanlar"
-          productList={productList}
-          swiperName="topSellersMobile"
-        />
-      )}
-
-      {isMobileScreen && (
-        <ProductSwiperSection
-          title="Özel Ürünler"
-          productList={productList}
-          swiperName="specialProductsMobile"
-        />
-      )}
-
-      {isLargeScreen && <Product4Promo1Section />}
-
+      {/* Large Screen Components */}
       {isLargeScreen && (
-        <TwoColumnLayout
-          leftContent={<PromoSidebar />}
-          rightContent={
-            <>
-              <TopSellingSection />
-              <PromoGrid column={2} products={products} />
-              <ProductList
-                title="Lorem Ipsum"
-                layout="grid"
-                products={productList}
-              />
-              <ProductSwiperSection
-                title="Sizin İçin Önerilenler"
-                productList={productList}
-                swiperName="recommends"
-              />
-              <PromoCard
-                title="Özel Teklif"
-                description="Tüm ürünlerde %50 indirim!"
-                buttonText="Şimdi Satın Al"
-                bgColor="bg-gray-200"
-                height="h-48"
-              />
-              <ProductSwiperSection
-                title="Sizin İçin Önerilenler"
-                productList={productList}
-                swiperName="recommends2"
-              />
-            </>
-          }
-        />
+        <>
+          <PromoGrid products={products3} column={3} />
+          <CategoryCarouselSection />
+          <Product4Promo1Section />
+          <TwoColumnLayout
+            leftContent={<PromoSidebar />}
+            rightContent={
+              <>
+                <ProductSwiperSection
+                  title="Çok Satanlar"
+                  productList={productList}
+                  swiperName="topSellers"
+                />
+                <PromoGrid column={2} products={products} />
+                <ProductList
+                  title="Lorem Ipsum"
+                  layout="grid"
+                  products={productList}
+                />
+                <ProductSwiperSection
+                  title="Sizin İçin Önerilenler"
+                  productList={productList}
+                  swiperName="recommends"
+                />
+                <PromoCard
+                  title="Özel Teklif"
+                  description="Tüm ürünlerde %50 indirim!"
+                  buttonText="Şimdi Satın Al"
+                  bgColor="bg-gray-200"
+                  height="h-48"
+                />
+                <ProductSwiperSection
+                  title="Sizin İçin Önerilenler"
+                  productList={productList}
+                  swiperName="recommends2"
+                />
+              </>
+            }
+          />
+        </>
+      )}
+
+      {/* Mobile Screen Components */}
+      {isMobileScreen && (
+        <>
+          <CategoryCarouselSection />
+          <ProductSwiperSection
+            title="Sizin İçin Önerilenler"
+            productList={productList}
+            swiperName="recommendsMobile"
+          />
+          <ProductSwiperSection
+            title="Çok Satanlar"
+            productList={productList}
+            swiperName="topSellersMobile"
+          />
+          <ProductSwiperSection
+            title="Özel Ürünler"
+            productList={productList}
+            swiperName="specialProductsMobile"
+          />
+        </>
       )}
 
       <PromoGrid
@@ -212,8 +214,9 @@ export default function Home() {
           },
         ]}
       />
-      {/* <FeatureBenefits /> */}
-      {/* <Footer /> */}
+
+      {/* Scroll to Top Button */}
+      <ScrollToTopButton />
     </>
   );
 }

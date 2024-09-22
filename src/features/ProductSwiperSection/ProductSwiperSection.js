@@ -12,7 +12,7 @@ import ProductCard from "@/common/components/ProductCard";
 const ProductSwiperSection = ({ title, productList, swiperName }) => {
   return (
     <div className=" container">
-      <div className="flex px-4 items-center justify-between my-4">
+      <div className="flex px-2 items-center justify-between my-4">
         <SectionHeader title={title} />
         <SectionNavigation swiperName={swiperName} />
       </div>
