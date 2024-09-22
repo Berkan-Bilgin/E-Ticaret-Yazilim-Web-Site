@@ -23,20 +23,19 @@ import {
 
 // Kategoriler listesi
 const categories = [
-  { icon: faBriefcaseMedical, label: "FIRSATLAR" },
-  { icon: faLaptopMedical, label: "KATEGORİ" },
-  { icon: faSyringe, label: "KATEGORİ" },
-  { icon: faStethoscope, label: "KATEGORİ" },
-  { icon: faPills, label: "KATEGORİ" },
-  { icon: faHospital, label: "KATEGORİ" },
-  { icon: faXRay, label: "KATEGORİ" },
-  { icon: faTeeth, label: "KATEGORİ" },
-  { icon: faMicroscope, label: "KATEGORİ" },
-  { icon: faBandAid, label: "KATEGORİ" },
-  { icon: faHeartbeat, label: "KATEGORİ" },
-  { icon: faFirstAid, label: "KATEGORİ" },
+  { icon: faBriefcaseMedical, label: "Sağlık Hizmetleri" },
+  { icon: faLaptopMedical, label: "Tele Sağlık" },
+  { icon: faSyringe, label: "Aşılar" },
+  { icon: faStethoscope, label: "Tıbbi Ekipman" },
+  { icon: faPills, label: "İlaçlar" },
+  { icon: faHospital, label: "Hastaneler" },
+  { icon: faXRay, label: "Radyoloji" },
+  { icon: faTeeth, label: "Diş Hekimliği" },
+  { icon: faMicroscope, label: "Laboratuvar" },
+  { icon: faBandAid, label: "İlk Yardım" },
+  { icon: faHeartbeat, label: "Kardiyoloji" },
+  { icon: faFirstAid, label: "Acil Yardım" },
 ];
-
 const CategoryCarousel = () => {
   return (
     <div className="w-full pt-2 ">
