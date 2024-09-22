@@ -5,6 +5,10 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import Header from "@/features/Header/Header";
 import FeatureBenefits from "@/features/BenefitsSection/BenefitsSection";
 import Footer from "@/features/Footer/Footer";
+import Topbar from "@/features/Header/components/Topbar";
+import Searchbar from "@/features/Header/components/Searchbar";
+import NavbarYeni from "@/features/Header/Navbar/Navbar";
+// import NavbarYeni from "@/features/Header/Navbar/Navbar";
 
 // config.autoAddCss = false;
 
@@ -30,7 +34,10 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Header />
+        {/* <Header /> */}
+        <Topbar />
+        <Searchbar />
+        <NavbarYeni />
         {children}
         <FeatureBenefits />
         <Footer />
