@@ -4,7 +4,7 @@ import { faUser as farUser } from "@fortawesome/free-regular-svg-icons";
 import Link from "next/link";
 import Button from "@/common/components/Button";
 
-const DropdownButton = () => {
+const UserMenu = () => {
   return (
     <div className="dropdown  dropdown-hover  group relative inline-block">
       {/* Buton */}
@@ -46,4 +46,4 @@ const DropdownButton = () => {
   );
 };
 
-export default DropdownButton;
+export default UserMenu;
