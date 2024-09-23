@@ -15,7 +15,9 @@ const Searchbar = () => {
       <div className="flex items-center sm:space-x-4 px-4 py-2 justify-between container">
         <Logo />
         <SearchInput />
-        <UserMenu />
+        <div className="hidden sm:block">
+          <UserMenu />
+        </div>
         <CartButton />
       </div>
     </div>
