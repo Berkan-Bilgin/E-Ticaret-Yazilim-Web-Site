@@ -6,8 +6,8 @@ import NavbarContact from "./NavbarContact";
 
 const NavbarYeni = () => {
   return (
-    <div className="">
-      <nav className="grid grid-cols-12 items-center container ">
+    <div className="hidden lg:block">
+      <nav className=" grid grid-cols-12 items-center container ">
         <NavbarCategories />
         <NavbarMenu />
         <NavbarContact />
