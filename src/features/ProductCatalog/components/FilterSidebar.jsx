@@ -29,7 +29,7 @@ const FilterSidebar = () => {
   };
 
   return (
-    <aside className="w-full md:w-1/4 p-4 bg-white rounded-lg shadow-md">
+    <aside className="w-full md:w-1/4 p-4 bg-gray-100 rounded-lg ">
       <h2 className="text-xl font-semibold mb-4">FİLTRELE</h2>
 
       {filters.map((filter, index) => (

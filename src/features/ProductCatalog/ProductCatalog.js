@@ -18,6 +18,18 @@ const ProductCatalog = () => {
       isNew: false,
     },
     {
+      id: 1,
+      name: "Ürün 1",
+      isOnSale: true,
+      discount: 20,
+      oldPrice: 100,
+      newPrice: 80,
+      sales: 150,
+      rating: 4,
+      reviews: 30,
+      isNew: false,
+    },
+    {
       id: 2,
       name: "Ürün 2",
       isOnSale: false,
