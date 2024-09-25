@@ -2,13 +2,17 @@
 import ProductCatalog from "@/features/ProductCatalog/ProductCatalog";
 
 export default function CategoryPage({ params }) {
-  const { kategori } = params; // params ile dinamik olarak kategori değerini alıyoruz
+  const { kategori } = params;
 
   return (
-    <div className="container bg-gray-100 ">
-      <h1>Ürün Listesi: {kategori}</h1>
-      <hr />
-      <ProductCatalog />
+    <div className="bg-gray-200">
+      <div className="container ">
+        <h1 className="text-3xl font-semibold text-text-primary  py-4">
+          Ürün Listesi: {kategori}
+        </h1>
+        <hr />
+        <ProductCatalog />
+      </div>
     </div>
   );
 }
