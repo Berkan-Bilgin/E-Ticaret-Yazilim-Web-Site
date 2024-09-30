@@ -8,6 +8,7 @@ import Footer from "@/features/Footer/Footer";
 import Topbar from "@/features/Header/components/Topbar";
 import Searchbar from "@/features/Header/components/Searchbar";
 import NavbarYeni from "@/features/Header/Navbar/Navbar";
+import Providers from "@/common/store/Providers";
 // import NavbarYeni from "@/features/Header/Navbar/Navbar";
 
 // config.autoAddCss = false;
@@ -35,12 +36,14 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {/* <Header /> */}
-        <Topbar />
-        <Searchbar />
-        <NavbarYeni />
-        {children}
-        <FeatureBenefits />
-        <Footer />
+        <Providers>
+          <Topbar />
+          <Searchbar />
+          <NavbarYeni />
+          {children}
+          <FeatureBenefits />
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
