@@ -4,12 +4,14 @@ import AuthService from "../services/authService";
 import { jwtDecode } from "jwt-decode";
 import { loginSuccess } from "@/common/store/authSlice";
 import { useDispatch } from "react-redux";
+import { useRouter } from "next/navigation";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const dispatch = useDispatch();
+  const router = useRouter();
 
   useEffect(() => {
     console.log("Login Form Tetiklendi");
@@ -27,6 +29,7 @@ const LoginForm = () => {
 
       // Redux store'a token'ı dispatch et ve loginSuccess aksiyonunu çağır
       dispatch(loginSuccess(response.token)); // Token'ı Redux store'a kaydediyoruz
+      router.push("/");
     } catch (error) {
       console.error("Login Failed:", error);
     }
