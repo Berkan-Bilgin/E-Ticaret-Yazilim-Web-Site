@@ -30,3 +30,8 @@
 .btn:hover {
   @apply  text-white transition-colors duration-500;
 }
+
+
+.container {
+  min-width: 378px;
+}
