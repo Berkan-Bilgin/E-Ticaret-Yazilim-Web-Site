@@ -6,7 +6,7 @@ const HorizontalProductCard = ({ product }) => {
       {/* Resim */}
       <div className="w-32  lg:w-28 md:w-24 h-full">
         <img
-          src="https://via.placeholder.com/150"
+          src="https://placehold.co/150x150/orange/white"
           alt={product.name}
           className="object-cover w-full h-full"
         />

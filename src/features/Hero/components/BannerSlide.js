@@ -29,7 +29,7 @@ const BannerSlide = () => {
         {/* Slide 1 */}
         <SwiperSlide>
           <img
-            src="https://via.placeholder.com/800x300?text=Banner+1"
+            src="https://placehold.co/800x300.webp?text=Ad+Goes+Here"
             alt="Banner 1"
             className="w-full h-96 object-cover"
           />
@@ -38,7 +38,7 @@ const BannerSlide = () => {
         {/* Slide 2 */}
         <SwiperSlide>
           <img
-            src="https://via.placeholder.com/800x300?text=Banner+2"
+            src="https://placehold.co/800x300.webp?text=Ad+Goes+Here"
             alt="Banner 2"
             className="w-full h-96 object-cover"
           />
@@ -47,7 +47,7 @@ const BannerSlide = () => {
         {/* Slide 3 */}
         <SwiperSlide>
           <img
-            src="https://via.placeholder.com/800x300?text=Banner+3"
+            src="https://placehold.co/800x300.webp?text=Ad+Goes+Here"
             alt="Banner 3"
             className="w-full h-96 object-cover"
           />
